@@ -1,3 +1,7 @@
+"""
+This is the intial prompt that asks the user for 
+what they want to see. 
+"""
 def main():
 
     print("----------------------------------------")
@@ -26,7 +30,11 @@ def main():
 def dimensionsofshape():{}
     #determines the shape of the build
 
-
+"""
+Determines the available space in the storage
+First it asks for the dimensions of the storage then
+asks if there is an insert in the storage
+"""
 def storagespace():
     print("                                     ")
     print("=====================================")
@@ -37,27 +45,29 @@ def storagespace():
     print("                                     ")
     height = float(input("How tall are the sides of the ladder storage area? (in inches)"))
     print("                                     ")
-    volumeofstorage = width * baselength * height
+    volumeofstorage = width * baselength * height #this finds the volume
 
-    insert = str(input("Is there an insert that will be placed inside of the storage area? (yes or no)"))
-
+    insert = str(input("Is there an insert that will be placed inside of the storage area? (yes or no)")) #determines if there is an insert in the storage unit
+    
+    #If there is an insert in the storage
     if insert == "yes":
         print("                                     ")
         insertthickness = float(input("What is the thickness of the insert? (in inches)"))
         print("                                     ")
         insertheight = float(input("How many inches up the side of the storage area will the insert be placed?"))
         
-        volumeabove = baselength * width * (height - (insertthickness + insertheight))
-        volumebelow = baselength * width * (insertheight)
+        volumeabove = baselength * width * (height - (insertthickness + insertheight)) #volume above the insert
+        volumebelow = baselength * width * (insertheight) #volume below the insert
 
         print ("The available space above the insert is: " + str(volumeabove) + " in^3" )
         print ("The available space below the insert is: " + str(volumebelow) + " in^3" )
 
+    #if there is no insert
     elif insert == "no" or "n" or "nah":
         print("                                     ")
         print ("The available space in the ladder extension is: " + str(volumeofstorage) + " in^3" )
         print("                                     ")
         main()
 
-
+#calls the intial function
 main()
