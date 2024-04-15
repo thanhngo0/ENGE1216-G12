@@ -9,11 +9,14 @@ def main():
     which = int(input("What are you looking for? (type 1, 2, 3, or 4) "))
     if which == 1:
         dimensionsofshape()
+        main()
     elif which == 2:
         storagespace()
+        main()
     elif which == 3:
         dimensionsofshape()
         storagespace()
+        main()
     elif which == 4:
         print("Have a good day!")
     else:
@@ -108,7 +111,6 @@ def storagespace():
             + " in^3"
         )
         print("                                     ")
-        main()
 
 
 main()
