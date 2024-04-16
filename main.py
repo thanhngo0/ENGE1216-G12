@@ -1,3 +1,9 @@
+"""
+Main method that is intiailly called
+Gives the user the available options for use
+Once an option is choosen, the correct method is then
+callled
+"""
 def main():
     print("----------------------------------------")
     print("1: Dimensions of the ladder extension")
@@ -23,7 +29,15 @@ def main():
         print("Please input 1, 2, or 3")
         main()
 
+"""
+Determines if the ladder extension will be able to go on the 
+ladder. It asks the user for the width of the ladder and then 
+determines if the extension will fit on said ladder.
 
+It also gives dimensions for the storage of the extension as well as
+the volume and surface area of the extension as a whole based on user
+inputted dimensions.
+"""
 def dimensionsofshape():
     print("                                     ")
     print("=====================================")
@@ -63,7 +77,14 @@ def dimensionsofshape():
             "You have chosen the 22 inch wide extension, the storage area will 4.75 inches long, 21 inches wide, and 4 inches high.\nThe volume will be 400.23 in^3 and the surface area will be 1181.69 in^2"
         )
 
+"""
+Asks the user for the dimesions of the extension (which can be aquired via dimensionsofshape
+method or by user knowledge) and returns the volume of the storage. 
 
+If the user wants to add an insert in the storage area then they can specify that when the method
+asks that of them. If they do want an insert, then the method will ask for the dimensions of the insert
+and then it will return the volume above and below the insert. 
+"""
 def storagespace():
     print("                                     ")
     print("=====================================")
@@ -97,8 +118,8 @@ def storagespace():
                 "How many inches up the side of the storage area will the insert be placed?"
             )
         )
-        volumeabove = baselength * width * (height - (insertthickness + insertheight))
-        volumebelow = baselength * width * (insertheight)
+        volumeabove = baselength * width * (height - (insertthickness + insertheight)) #volume of storage above the insert
+        volumebelow = baselength * width * (insertheight) #volume below the insert
 
         print("The available space above the insert is: " + str(volumeabove) + " in^3")
         print("The available space below the insert is: " + str(volumebelow) + " in^3")
@@ -113,4 +134,4 @@ def storagespace():
         print("                                     ")
 
 
-main()
+main() #This is where the main method is called
