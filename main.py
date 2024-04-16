@@ -99,14 +99,14 @@ def storagespace():
         input("How tall are the sides of the ladder storage area? (in inches)")
     )
     print("                                     ")
-    volumeofstorage = width * baselength * height
+    volumeofstorage = width * baselength * height #volume of storage with insert
 
     insert = str(
         input(
             "Is there an insert that will be placed inside of the storage area? (yes or no)"
         )
     )
-
+    #if the user wants an insert
     if insert == "yes":
         print("                                     ")
         insertthickness = float(
@@ -123,7 +123,7 @@ def storagespace():
 
         print("The available space above the insert is: " + str(volumeabove) + " in^3")
         print("The available space below the insert is: " + str(volumebelow) + " in^3")
-
+    #if the user does not want an insert
     elif insert == "no" or "n" or "nah":
         print("                                     ")
         print(
